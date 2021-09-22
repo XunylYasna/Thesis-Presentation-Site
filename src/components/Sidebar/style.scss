@@ -1,0 +1,125 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.sidebar {
+  width: 400px;
+  min-height: 600px;
+  margin: auto;
+  &__inner {
+    display: block !important;
+    width: 300px;
+    padding: 25px 20px 0;
+  }
+  &__links {
+    display: block !important;
+  }
+  &__author-block {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  &__keyword {
+    &-block {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    &-title {
+      font-size: $typographic-base-font-size * 1;
+      @include margin(0.5, 0, 0, 0);
+    }
+
+    &-keywords {
+      @include margin(0.2, 0);
+      @include margin-bottom(1);
+      @include padding(0.2, 0);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__author {
+    border-bottom: 1px solid $color-gray;
+    @include margin-bottom(1);
+    &-title {
+      font-size: $typographic-base-font-size * 2;
+      font-weight: 500;
+      @include line-height(1.125);
+      @include margin(0.1, 0, 0.1, 0);
+      &-link {
+        color: $color-base;
+        &:hover,
+        &:focus {
+          color: $color-base;
+        }
+      }
+    }
+    &-subtitle {
+      color: $color-gray;
+      font-size: $typographic-base-font-size * 1.125;
+      @include line-height(1);
+      @include margin(0.5, 0, 0, 0);
+    }
+    &-keywords {
+      color: $color-gray;
+      font-size: $typographic-base-font-size;
+      @include line-height(1);
+      @include margin(0.5, 0, 1, 0);
+    }
+  }
+  &__copyright {
+    color: lighten($color-gray, 18%);
+    font-size: $typographic-small-font-size;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    // display: relative !important;
+  }
+
+  &__department {
+    color: lighten($color-gray, 0%);
+    font-size: $typographic-small-font-size;
+    @include margin(1, 0, 0, 0);
+  }
+  &__program {
+    color: lighten($color-gray, 0%);
+    font-size: $typographic-small-font-size;
+    @include margin(0, 0, 0, 0);
+  }
+}
+
+@include breakpoint-sm {
+  .sidebar {
+    &__inner {
+      padding: 30px 20px 0;
+    }
+  }
+}
+
+@include breakpoint-lg {
+  .sidebar {
+    // width: 400px;
+    margin: 0;
+    &__inner {
+      padding: 40px;
+      position: fixed;
+      &:after {
+        background: $color-gray-border;
+        background: linear-gradient(
+          to bottom,
+          $color-gray-border 0%,
+          $color-gray-border 48%,
+          $color-white 100%
+        );
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 540px;
+        top: 30px;
+        right: -10px;
+        bottom: 0;
+      }
+    }
+  }
+}

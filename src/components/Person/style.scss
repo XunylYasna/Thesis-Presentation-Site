@@ -1,0 +1,17 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.person {
+  display: flex;
+  flex-direction: column;
+  @include margin(0.5, 0.5, 0.5, 0.5);
+  img {
+    width: 200px;
+    height: 200px;
+    @include margin-bottom(0.5);
+  }
+  p {
+    text-align: center;
+    @include margin(0, 0, 0, 0);
+  }
+}

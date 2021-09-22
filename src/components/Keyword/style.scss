@@ -1,0 +1,12 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.keyword {
+  font-size: $typographic-base-font-size * 0.8;
+  @include margin(0.1, 0.2, 0.1, 0);
+  @include padding(0.1, 0.2);
+  background-color: lighten($color-gray, 10%);
+  border: $color-gray;
+  border-radius: 4px;
+  color: $color-base;
+}
